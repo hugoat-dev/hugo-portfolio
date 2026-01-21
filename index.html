@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hugo Beaugeraud – Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --accent: #2563eb;
+            --accent-soft: #1d4ed8;
+            --text: #e6edf3;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            padding: 80px 20px 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1f2937, #0d1117 55%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(37, 99, 235, 0.15);
+            filter: blur(80px);
+            top: -150px;
+            right: -100px;
+            z-index: 0;
+        }
+
+        header > * { position: relative; z-index: 1; }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 700; }
+        h2 { font-size: 2rem; margin-top: 40px; text-align: center; font-weight: 600; }
+        h3 { margin-top: 0; }
+
+        p {
+            max-width: 800px;
+            margin: 10px auto;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        .tagline { font-size: 1.2rem; opacity: 0.85; }
+
+        .cta-buttons { margin-top: 30px; }
+
+        .cta-buttons a {
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            color: white;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(37, 99, 235, 0.5);
+        }
+
+        .secondary-btn {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .secondary-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        section { padding: 60px 20px; }
+
+        .project-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            margin: 20px auto;
+            border-radius: 12px;
+            max-width: 900px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact { text-align: center; }
+
+        .contact a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        form label {
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 4px;
+            border-radius: 6px;
+            border: none;
+            background: #0b1220;
+            color: var(--text);
+        }
+
+        form button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            border: none;
+            border-radius: 999px;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header class="reveal">
+        <h1>Hugo BEAUGERAUD</h1>
+        <p class="tagline">1st‑year Computer Engineering Student @ EFREI Paris</p>
+        <p class="tagline">International experience across the US & Europe</p>
+
+        <div class="cta-buttons">
+            <a href="#projects" class="primary-btn">View My Projects</a>
+            <a href="#booking" class="secondary-btn">Book a Tutoring Session</a>
+            <a href="#contact" class="secondary-btn">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+        <h2>About Me</h2>
+        <p>
+            I'm a first‑year engineering student at <strong>EFREI Paris</strong>, specializing in computer engineering.
+            With international experience across the United States and Europe, I’m passionate about global tech,
+            software development, and building meaningful connections around the world.
+        </p>
+        <p>
+            I’m currently developing projects in Python, exploring automation, and expanding my technical skills while
+            also working as an English tutor for students across France and Europe. My goal is to collaborate with
+            people worldwide, grow professionally, and take on opportunities in the tech industry.
+        </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3>Python Adventure Game – Harry Potter Theme</h3>
+            <p>
+                A Python‑based adventure game built with my friend <strong>Julien Bardet‑Neyrin</strong>.  
+                The game includes character choices, spells, battles, and a full storyline inspired by the Harry Potter universe.
+                It was a great opportunity to practice object‑oriented programming, game logic, and teamwork.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>English Tutoring – 10+ Students Across Europe</h3>
+            <p>
+                I provide English tutoring lessons to students in France and across Europe.  
+                My focus is on conversation, academic support, exam preparation, and helping students gain confidence.
+                This experience strengthened my communication skills and entrepreneurial mindset.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Psychological Essay for an American College Application</h3>
+            <p>
+                As part of my applications to American universities, I wrote a psychological essay reflecting on identity,
+                resilience, and personal growth.
+            </p>
+            <p>
+                Read it here:  
+                <a href="https://www.linkedin.com/posts/hugo-beaugeraud-8ba115184_psychological-essay-activity-7377112673240522752-l4ql"
+                   target="_blank" style="color:#58a6ff;">
+                    My essay on LinkedIn
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="reveal">
+        <h2>Book a Tutoring Session</h2>
+        <p style="text-align:center; max-width:700px; margin:auto;">
+            Interested in English tutoring or beginner programming help?  
+            Fill out the form below and I’ll get back to you quickly.
+        </p>
+
+        <form id="bookingForm" style="max-width:600px; margin:40px auto; background:#161b22; padding:25px; border-radius:10px; border:1px solid #30363d;">
+            <label>Name</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Preferred Date & Time</label>
+            <input type="datetime-local" required>
+
+            <label>Message</label>
+            <textarea rows="4"></textarea>
+
+            <button type="submit">Send Request</button>
+        </form>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact reveal">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hugobeaugeraud42@gmail.com">hugobeaugeraud42@gmail.com</a></p>
+        <p>LinkedIn: 
+            <a href="https://www.linkedin.com/in/hugo-beaugeraud-8ba115184/" target="_blank">
+                Hugo BEAUGERAUD
+            </a>
+        </p>
+        <p>GitHub: <a href="https://github.com/hugoat-dev" target="_blank">hugoat-dev</a></p>
+    </section>
+
+    <footer>
+        © 2026 Hugo Beaugeraud — All rights reserved.
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        function handleScroll() {
+            const triggerBottom = window.innerHeight * 0.85;
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < triggerBottom) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+
+        // Booking form
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Your tutoring request has been sent! I’ll contact you soon.");
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
